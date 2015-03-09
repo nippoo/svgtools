@@ -22,6 +22,9 @@ def findreplace():
                 # replace rgb(r,g,b) tuplets with black
                 s = re.sub(r'rgb\(([0-9]|[0-9][0-9]|[0-9][0-9][0-9]),([0-9]|[0-9][0-9]|[0-9][0-9][0-9]),([0-9]|[0-9][0-9]|[0-9][0-9][0-9])\)', r'#000', s)
 
+                # replace all strokes with black strokes
+                s = re.sub(r'stroke:#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})', r'stroke:#000', s)
+
                 # font replacement for Illustrator etc
                 s = s.replace("font-family: sans-serif", "font-family: Arial")
 
